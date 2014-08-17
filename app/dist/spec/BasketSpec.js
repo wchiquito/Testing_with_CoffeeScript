@@ -7,7 +7,7 @@
       test.basket = new Basket();
       test.item = new Item(1, "Macbook Air", "Newer, thinner, better", 799);
       test.item2 = new Item(2, "Magic Trackpad", "Better than a mouse", 50);
-      return test.basket.add(item2, 1);
+      return test.basket.add(test.item2, 1);
     });
     it("should be able to add a new item to basket", function() {
       var priorCountVal;
