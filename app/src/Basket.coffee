@@ -1,7 +1,8 @@
 class Basket
-    items: []
-    distinctCount: 0
-    totalCount: 0
+    constructor: ->
+        @items = []
+        @distinctCount = 0
+        @totalCount = 0
 
     add: (item, quantity) ->
         if @itemExistsInBasket item.id

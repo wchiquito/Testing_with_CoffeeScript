@@ -15,11 +15,24 @@
       test.basket.add(test.item, 1);
       return expect(test.basket.distinctCount).toEqual(priorCountVal + 1);
     });
-    return it("should be able to update quantity when adding an item already in the basket", function() {
+    it("should be able to update quantity when adding an item already in the basket", function() {
       var priorCountVal;
       priorCountVal = test.basket.getQuantity(2);
       test.basket.add(test.item2, 1);
       return expect(test.basket.getQuantity(2)).toEqual(priorCountVal + 1);
+    });
+    return describe("helper functions in the Basket class", function() {
+      return describe("getQuantity", function() {
+        it("should return false if passed an id that is not in array", function() {
+          return expect(test.basket.getQuantity(12345)).toBeFalsy();
+        });
+        it("should return false if passed an invalid argument, such as a string", function() {
+          return expect(test.basket.getQuantity("hello!")).toBeFalsy();
+        });
+        return it("should return the quantity if given a valid id", function() {
+          return expect(test.basket.getQuantity(2)).toEqual(1);
+        });
+      });
     });
   });
 

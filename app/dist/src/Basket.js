@@ -3,13 +3,11 @@
   var Basket;
 
   Basket = (function() {
-    function Basket() {}
-
-    Basket.prototype.items = [];
-
-    Basket.prototype.distinctCount = 0;
-
-    Basket.prototype.totalCount = 0;
+    function Basket() {
+      this.items = [];
+      this.distinctCount = 0;
+      this.totalCount = 0;
+    }
 
     Basket.prototype.add = function(item, quantity) {
       var curItemLoc;
