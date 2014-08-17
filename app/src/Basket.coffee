@@ -11,7 +11,8 @@ class Basket
         else
             @items.push {
                 "item_id": item.id,
-                "quantity": quantity
+                "quantity": quantity,
+                "item": item
                 }
             @distinctCount++
         @totalCount+= quantity
@@ -32,5 +33,11 @@ class Basket
             return count if item.item_id is item_id
             count++
         false
+
+    calculateTotal: ->
+        total = 0
+        for i in @items
+            total += i.item.cost * i.quantity
+        total
 
 window.Basket = Basket

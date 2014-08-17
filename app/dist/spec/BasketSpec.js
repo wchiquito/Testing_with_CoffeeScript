@@ -47,6 +47,20 @@
       test.basket.add(test.item, 2);
       return expect(test.basket.distinctCount).toEqual(priorCountVal);
     });
+    describe("calculating total cost", function() {
+      it("should calculate the cost for a single item in the basket", function() {
+        return expect(test.basket.calculateTotal()).toEqual(50);
+      });
+      it("should calculate the cost for 1 item type with multiple quantities", function() {
+        test.basket.add(test.item2, 3);
+        return expect(test.basket.calculateTotal()).toEqual(200);
+      });
+      return it("should calculate cost for multiple items and multiple quantities", function() {
+        test.basket.add(test.item2, 2);
+        test.basket.add(test.item, 2);
+        return expect(test.basket.calculateTotal()).toEqual(1748);
+      });
+    });
     return describe("helper functions in the Basket class", function() {
       describe("getQuantity", function() {
         it("should return false if passed an id that is not in array", function() {

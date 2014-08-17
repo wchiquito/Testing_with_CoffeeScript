@@ -39,6 +39,19 @@ describe "Basket Class", ->
         test.basket.add test.item, 2
         expect(test.basket.distinctCount).toEqual priorCountVal
 
+    describe "calculating total cost", ->
+        it "should calculate the cost for a single item in the basket", ->
+            expect(test.basket.calculateTotal()).toEqual 50
+
+        it "should calculate the cost for 1 item type with multiple quantities", ->
+            test.basket.add(test.item2, 3)
+            expect(test.basket.calculateTotal()).toEqual 200
+    
+        it "should calculate cost for multiple items and multiple quantities", ->
+            test.basket.add(test.item2, 2)
+            test.basket.add(test.item, 2)
+            expect(test.basket.calculateTotal()).toEqual 1748
+
     describe "helper functions in the Basket class", ->
         describe "getQuantity", ->
             it "should return false if passed an id that is not in array", ->

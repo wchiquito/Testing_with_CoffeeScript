@@ -17,7 +17,8 @@
       } else {
         this.items.push({
           "item_id": item.id,
-          "quantity": quantity
+          "quantity": quantity,
+          "item": item
         });
         this.distinctCount++;
       }
@@ -60,6 +61,17 @@
         count++;
       }
       return false;
+    };
+
+    Basket.prototype.calculateTotal = function() {
+      var i, total, _i, _len, _ref;
+      total = 0;
+      _ref = this.items;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        i = _ref[_i];
+        total += i.item.cost * i.quantity;
+      }
+      return total;
     };
 
     return Basket;
