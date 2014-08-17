@@ -36,8 +36,8 @@ class Basket
 
     calculateTotal: ->
         total = 0
-        for i in @items
-            total += i.item.cost * i.quantity
+        for item in @items
+            total += item.item.cost * item.quantity
         total
 
 window.Basket = Basket

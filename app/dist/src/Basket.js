@@ -64,12 +64,12 @@
     };
 
     Basket.prototype.calculateTotal = function() {
-      var i, total, _i, _len, _ref;
+      var item, total, _i, _len, _ref;
       total = 0;
       _ref = this.items;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        i = _ref[_i];
-        total += i.item.cost * i.quantity;
+        item = _ref[_i];
+        total += item.item.cost * item.quantity;
       }
       return total;
     };

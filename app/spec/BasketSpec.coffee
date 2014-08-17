@@ -6,7 +6,7 @@ describe "Basket Class", ->
         test.item = new Item 1, "Macbook Air", "Newer, thinner, better", 799
         test.item2 = new Item 2, "Magic Trackpad", "Better than a mouse", 50
         test.basket.add test.item2, 1
-        
+
     it "should be able to add a new item to basket", ->
         priorCountVal = test.basket.distinctCount
         test.basket.add test.item, 1
@@ -44,22 +44,22 @@ describe "Basket Class", ->
             expect(test.basket.calculateTotal()).toEqual 50
 
         it "should calculate the cost for 1 item type with multiple quantities", ->
-            test.basket.add(test.item2, 3)
+            test.basket.add test.item2, 3
             expect(test.basket.calculateTotal()).toEqual 200
-    
+
         it "should calculate cost for multiple items and multiple quantities", ->
-            test.basket.add(test.item2, 2)
-            test.basket.add(test.item, 2)
+            test.basket.add test.item2, 2
+            test.basket.add test.item, 2
             expect(test.basket.calculateTotal()).toEqual 1748
 
     describe "helper functions in the Basket class", ->
         describe "getQuantity", ->
             it "should return false if passed an id that is not in array", ->
                 expect(test.basket.getQuantity 12345).toBeFalsy()
-            
+
             it "should return false if passed an invalid argument, such as a string", ->
                 expect(test.basket.getQuantity "hello!").toBeFalsy()
-            
+
             it "should return the quantity if given a valid id", ->
                 expect(test.basket.getQuantity 2).toEqual 1
 
@@ -69,7 +69,7 @@ describe "Basket Class", ->
 
             it "should return true if item id does exist", ->
                 expect(test.basket.itemExistsInBasket 2).toBeTruthy()
-    
+
             it "should return false if given an invalid argument, such as a string", ->
                 expect(test.basket.itemExistsInBasket "hello").toBeFalsy()
 
