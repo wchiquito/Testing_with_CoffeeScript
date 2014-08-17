@@ -5,10 +5,10 @@ Practicing some Behaviour Driven Development (BDD)/CoffeeScript, from Jack Frank
 
 ## Using
 
-[Node.js](http://nodejs.org/) 0.10.26
-[CoffeeScript](http://coffeescript.org/) 1.7.1
-[Jasmine](http://jasmine.github.io/) 2.0.1
-[Cloud9 IDE](https://c9.io/)
+* [Node.js](http://nodejs.org/) 0.10.26
+* [CoffeeScript](http://coffeescript.org/) 1.7.1
+* [Jasmine](http://jasmine.github.io/) 2.0.1
+* [Cloud9 IDE](https://c9.io/)
 
 ## Getting Started
 
