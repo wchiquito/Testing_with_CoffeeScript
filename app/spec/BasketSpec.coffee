@@ -10,33 +10,33 @@ describe "Basket Class", ->
     it "should be able to add a new item to basket", ->
         priorCountVal = test.basket.distinctCount
         test.basket.add test.item, 1
-        expect(test.basket.distinctCount).toEqual priorCountVal + 1
+        expect(test.basket.distinctCount).toEqual ++priorCountVal
 
     it "should be able to update quantity when adding an item already in the basket", ->
         priorCountVal = test.basket.getQuantity 2
         test.basket.add test.item2, 1
-        expect(test.basket.getQuantity 2).toEqual priorCountVal + 1
+        expect(test.basket.getQuantity 2).toEqual ++priorCountVal
 
     it "should update the total count by 1 when adding a brand new item", ->
         priorCountVal = test.basket.totalCount
-        test.basket.add(test.item, 1);
-        expect(test.basket.totalCount).toEqual priorCountVal + 1
+        test.basket.add test.item, 1
+        expect(test.basket.totalCount).toEqual ++priorCountVal
 
     it "should increase total count by 1 when adding one more of an item that already exists", ->
-        test.basket.add(test.item, 1)
+        test.basket.add test.item, 1
         priorCountVal = test.basket.totalCount
-        test.basket.add(test.item, 1)
-        expect(test.basket.totalCount).toEqual priorCountVal + 1
+        test.basket.add test.item, 1
+        expect(test.basket.totalCount).toEqual ++priorCountVal
 
     it "should update distinct count when adding brand new item", ->
         priorCountVal = test.basket.distinctCount
-        test.basket.add(test.item, 1)
-        expect(test.basket.distinctCount).toEqual priorCountVal + 1
+        test.basket.add test.item, 1
+        expect(test.basket.distinctCount).toEqual ++priorCountVal
 
     it "should not update distinct count when adding more of an item that already exists", ->
-        test.basket.add(test.item, 1)
+        test.basket.add test.item, 1
         priorCountVal = test.basket.distinctCount
-        test.basket.add(test.item, 2)
+        test.basket.add test.item, 2
         expect(test.basket.distinctCount).toEqual priorCountVal
 
     describe "helper functions in the Basket class", ->

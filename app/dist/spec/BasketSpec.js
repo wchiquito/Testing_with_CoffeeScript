@@ -13,32 +13,32 @@
       var priorCountVal;
       priorCountVal = test.basket.distinctCount;
       test.basket.add(test.item, 1);
-      return expect(test.basket.distinctCount).toEqual(priorCountVal + 1);
+      return expect(test.basket.distinctCount).toEqual(++priorCountVal);
     });
     it("should be able to update quantity when adding an item already in the basket", function() {
       var priorCountVal;
       priorCountVal = test.basket.getQuantity(2);
       test.basket.add(test.item2, 1);
-      return expect(test.basket.getQuantity(2)).toEqual(priorCountVal + 1);
+      return expect(test.basket.getQuantity(2)).toEqual(++priorCountVal);
     });
     it("should update the total count by 1 when adding a brand new item", function() {
       var priorCountVal;
       priorCountVal = test.basket.totalCount;
       test.basket.add(test.item, 1);
-      return expect(test.basket.totalCount).toEqual(priorCountVal + 1);
+      return expect(test.basket.totalCount).toEqual(++priorCountVal);
     });
     it("should increase total count by 1 when adding one more of an item that already exists", function() {
       var priorCountVal;
       test.basket.add(test.item, 1);
       priorCountVal = test.basket.totalCount;
       test.basket.add(test.item, 1);
-      return expect(test.basket.totalCount).toEqual(priorCountVal + 1);
+      return expect(test.basket.totalCount).toEqual(++priorCountVal);
     });
     it("should update distinct count when adding brand new item", function() {
       var priorCountVal;
       priorCountVal = test.basket.distinctCount;
       test.basket.add(test.item, 1);
-      return expect(test.basket.distinctCount).toEqual(priorCountVal + 1);
+      return expect(test.basket.distinctCount).toEqual(++priorCountVal);
     });
     it("should not update distinct count when adding more of an item that already exists", function() {
       var priorCountVal;
