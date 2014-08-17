@@ -22,7 +22,7 @@
       return expect(test.basket.getQuantity(2)).toEqual(priorCountVal + 1);
     });
     return describe("helper functions in the Basket class", function() {
-      return describe("getQuantity", function() {
+      describe("getQuantity", function() {
         it("should return false if passed an id that is not in array", function() {
           return expect(test.basket.getQuantity(12345)).toBeFalsy();
         });
@@ -31,6 +31,28 @@
         });
         return it("should return the quantity if given a valid id", function() {
           return expect(test.basket.getQuantity(2)).toEqual(1);
+        });
+      });
+      describe("itemExistsInBasket", function() {
+        it("should return false if item id does not exist", function() {
+          return expect(test.basket.itemExistsInBasket(23455)).toBeFalsy();
+        });
+        it("should return true if item id does exist", function() {
+          return expect(test.basket.itemExistsInBasket(2)).toBeTruthy();
+        });
+        return it("should return false if given an invalid argument, such as a string", function() {
+          return expect(test.basket.itemExistsInBasket("hello")).toBeFalsy();
+        });
+      });
+      return describe("getItemLocation", function() {
+        it("should return the location of item when given valid id", function() {
+          return expect(test.basket.getItemLocation(2)).toEqual(0);
+        });
+        it("should return false if item doesn't exist", function() {
+          return expect(test.basket.getItemLocation(39)).toBeFalsy();
+        });
+        return it("should return false if given a invalid input", function() {
+          return expect(test.basket.getItemLocation("hello")).toBeFalsy();
         });
       });
     });
