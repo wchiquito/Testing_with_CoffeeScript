@@ -17,6 +17,28 @@ describe "Basket Class", ->
         test.basket.add test.item2, 1
         expect(test.basket.getQuantity 2).toEqual priorCountVal + 1
 
+    it "should update the total count by 1 when adding a brand new item", ->
+        priorCountVal = test.basket.totalCount
+        test.basket.add(test.item, 1);
+        expect(test.basket.totalCount).toEqual priorCountVal + 1
+
+    it "should increase total count by 1 when adding one more of an item that already exists", ->
+        test.basket.add(test.item, 1)
+        priorCountVal = test.basket.totalCount
+        test.basket.add(test.item, 1)
+        expect(test.basket.totalCount).toEqual priorCountVal + 1
+
+    it "should update distinct count when adding brand new item", ->
+        priorCountVal = test.basket.distinctCount
+        test.basket.add(test.item, 1)
+        expect(test.basket.distinctCount).toEqual priorCountVal + 1
+
+    it "should not update distinct count when adding more of an item that already exists", ->
+        test.basket.add(test.item, 1)
+        priorCountVal = test.basket.distinctCount
+        test.basket.add(test.item, 2)
+        expect(test.basket.distinctCount).toEqual priorCountVal
+
     describe "helper functions in the Basket class", ->
         describe "getQuantity", ->
             it "should return false if passed an id that is not in array", ->

@@ -21,6 +21,32 @@
       test.basket.add(test.item2, 1);
       return expect(test.basket.getQuantity(2)).toEqual(priorCountVal + 1);
     });
+    it("should update the total count by 1 when adding a brand new item", function() {
+      var priorCountVal;
+      priorCountVal = test.basket.totalCount;
+      test.basket.add(test.item, 1);
+      return expect(test.basket.totalCount).toEqual(priorCountVal + 1);
+    });
+    it("should increase total count by 1 when adding one more of an item that already exists", function() {
+      var priorCountVal;
+      test.basket.add(test.item, 1);
+      priorCountVal = test.basket.totalCount;
+      test.basket.add(test.item, 1);
+      return expect(test.basket.totalCount).toEqual(priorCountVal + 1);
+    });
+    it("should update distinct count when adding brand new item", function() {
+      var priorCountVal;
+      priorCountVal = test.basket.distinctCount;
+      test.basket.add(test.item, 1);
+      return expect(test.basket.distinctCount).toEqual(priorCountVal + 1);
+    });
+    it("should not update distinct count when adding more of an item that already exists", function() {
+      var priorCountVal;
+      test.basket.add(test.item, 1);
+      priorCountVal = test.basket.distinctCount;
+      test.basket.add(test.item, 2);
+      return expect(test.basket.distinctCount).toEqual(priorCountVal);
+    });
     return describe("helper functions in the Basket class", function() {
       describe("getQuantity", function() {
         it("should return false if passed an id that is not in array", function() {
