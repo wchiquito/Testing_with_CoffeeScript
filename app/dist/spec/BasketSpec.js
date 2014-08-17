@@ -17,9 +17,9 @@
     });
     return it("should be able to update quantity when adding an item already in the basket", function() {
       var priorCountVal;
-      priorCountVal = test.basket.getQuantity(1);
-      test.basket.add(test.item, 1);
-      return expect(test.basket.getQuantity(1)).toEqual(priorCountVal + 1);
+      priorCountVal = test.basket.getQuantity(2);
+      test.basket.add(test.item2, 1);
+      return expect(test.basket.getQuantity(2)).toEqual(priorCountVal + 1);
     });
   });
 

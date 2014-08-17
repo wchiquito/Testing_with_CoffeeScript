@@ -27,23 +27,23 @@
     };
 
     Basket.prototype.getQuantity = function(item_id) {
-      var i, _i, _len, _ref;
+      var item, _i, _len, _ref;
       _ref = this.items;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        i = _ref[_i];
-        if (i.item_id === item_id) {
-          return i.quantity;
+        item = _ref[_i];
+        if (item.item_id === item_id) {
+          return item.quantity;
         }
       }
       return false;
     };
 
     Basket.prototype.itemExistsInBasket = function(item_id) {
-      var i, _i, _len, _ref;
+      var item, _i, _len, _ref;
       _ref = this.items;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        i = _ref[_i];
-        if (i.item_id === item_id) {
+        item = _ref[_i];
+        if (item.item_id === item_id) {
           return true;
         }
       }
@@ -51,12 +51,12 @@
     };
 
     Basket.prototype.getItemLocation = function(item_id) {
-      var count, i, _i, _len, _ref;
+      var count, item, _i, _len, _ref;
       count = 0;
       _ref = this.items;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        i = _ref[_i];
-        if (i.item_id === item_id) {
+        item = _ref[_i];
+        if (item.item_id === item_id) {
           return count;
         }
         count++;
