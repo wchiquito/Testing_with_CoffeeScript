@@ -20,10 +20,10 @@ describe "Basket Class", ->
     describe "helper functions in the Basket class", ->
         describe "getQuantity", ->
             it "should return false if passed an id that is not in array", ->
-                expect(test.basket.getQuantity(12345)).toBeFalsy()
+                expect(test.basket.getQuantity 12345).toBeFalsy()
             
             it "should return false if passed an invalid argument, such as a string", ->
-                expect(test.basket.getQuantity("hello!")).toBeFalsy()
+                expect(test.basket.getQuantity "hello!").toBeFalsy()
             
             it "should return the quantity if given a valid id", ->
-                expect(test.basket.getQuantity(2)).toEqual 1
+                expect(test.basket.getQuantity 2).toEqual 1
