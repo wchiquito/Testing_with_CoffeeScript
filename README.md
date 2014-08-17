@@ -1,18 +1,15 @@
-# README for a newly created project.
+# Testing With CoffeeScript
 
-There are a couple of things you should do first, before you can use all of Git's power:
+Practicing some Behaviour Driven Development (BDD)/CoffeeScript, from Jack Franklin MiniBook published by Efendi Books.
+[Testing With CoffeeScript](https://efendibooks.com/minibooks/testing-with-coffeescript)
 
-  * Add a remote to this project: in the Cloud9 IDE command line, you can execute the following commands
-    `git remote add [remote name] [remote url (eg. 'git@github.com:/ajaxorg/node_chat')]` [Enter]
-  * Create new files inside your project
-  * Add them to to Git by executing the following command
-    `git add [file1, file2, file3, ...]` [Enter]
-  * Create a commit which can be pushed to the remote you just added
-    `git commit -m 'added new files'` [Enter]
-  * Push the commit the remote
-    `git push [remote name] master` [Enter]
+## Using
 
-That's it! If this doesn't work for you, please visit the excellent resources from [Github.com](http://help.github.com) and the [Pro Git](http://http://progit.org/book/) book.
-If you can't find your answers there, feel free to ask us via Twitter (@cloud9ide), [mailing list](groups.google.com/group/cloud9-ide) or IRC (#cloud9ide on freenode).
+[Node.js](http://nodejs.org/) 0.10.26
+[CoffeeScript](http://coffeescript.org/) 1.7.1
+[Jasmine](http://jasmine.github.io/) 2.0.1
+[Cloud9 IDE](https://c9.io/)
 
-Happy coding!
+## Getting Started
+
+Open up **app/SpecRunner.html** to see the passing specs.
